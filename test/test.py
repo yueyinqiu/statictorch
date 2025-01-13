@@ -1,17 +1,28 @@
-import torch
 from statictorch import *
-
-def f_2d(x: Tensor2d):
-    print(x)
-
-tensor1 = torch.zeros([2, 3])
-f_2d(tensor1)
-
-tensor2 = Tensor2d(torch.zeros([2, 3]))
-f_2d(tensor2)
 
 class Batch(TensorDimensionDescriptor):
     pass
 
-tensor3: Tensor2d[Batch, Batch] = Tensor2d(torch.zeros([2, 3]))
-f_2d(tensor3)
+class Channel(TensorDimensionDescriptor):
+    pass
+
+class Sample(TensorDimensionDescriptor):
+    pass
+
+def train_on(x: Tensor3d[Batch, Channel, Sample], y: Tensor3d[Channel, Batch, Sample]):
+    ...
+
+def load_data() -> tuple[Tensor3d[Batch, Channel, Sample], Tensor3d[Batch, Channel, Sample]]:
+    ...
+
+data_x, data_y = load_data()
+train_on(data_x, data_y)
+# If you are using Pylance it will say:
+# Argument of type "Tensor3d[Batch, Channel, Sample]" cannot be assigned to parameter "y" of type "Tensor3d[Channel, Batch, Sample]" in function "train_on"
+
+# To solve the problem:
+data_y_transposed = data_y.transpose(1, 0)
+train_on(data_x, Tensor3d(data_y_transposed))
+
+# Of course in some cases you want to force passing data_y, just simply cheating the type checker with:
+train_on(data_x, Tensor3d(data_y))

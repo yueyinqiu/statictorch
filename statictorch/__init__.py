@@ -12,7 +12,6 @@ class Tensor0d(_torch.Tensor):
     def __new__(cls, tensor: _torch.Tensor) -> 'Tensor0d':
         return tensor  # type: ignore
 
-    # noinspection PyUnusedLocal
     def __init__(self, tensor: _torch.Tensor):
         super().__init__()
         raise RuntimeError('Tensor0d.__init__ only exists for type annotation and should not be called in runtime.')
@@ -23,7 +22,6 @@ class Tensor1d(_torch.Tensor, _typing.Generic[_T1]):
     def __new__(cls, tensor: _torch.Tensor) -> 'Tensor1d':
         return tensor  # type: ignore
 
-    # noinspection PyUnusedLocal
     def __init__(self, tensor: _torch.Tensor):
         super().__init__()
         raise RuntimeError('Tensor1d.__init__ only exists for type annotation and should not be called in runtime.')
@@ -34,7 +32,6 @@ class Tensor2d(_torch.Tensor, _typing.Generic[_T1, _T2]):
     def __new__(cls, tensor: _torch.Tensor) -> 'Tensor2d':
         return tensor  # type: ignore
 
-    # noinspection PyUnusedLocal
     def __init__(self, tensor: _torch.Tensor):
         super().__init__()
         raise RuntimeError('Tensor2d.__init__ only exists for type annotation and should not be called in runtime.')
@@ -45,7 +42,6 @@ class Tensor3d(_torch.Tensor, _typing.Generic[_T1, _T2, _T3]):
     def __new__(cls, tensor: _torch.Tensor) -> 'Tensor3d':
         return tensor  # type: ignore
 
-    # noinspection PyUnusedLocal
     def __init__(self, tensor: _torch.Tensor):
         super().__init__()
         raise RuntimeError('Tensor3d.__init__ only exists for type annotation and should not be called in runtime.')
@@ -56,7 +52,6 @@ class Tensor4d(_torch.Tensor, _typing.Generic[_T1, _T2, _T3, _T4]):
     def __new__(cls, tensor: _torch.Tensor) -> 'Tensor4d':
         return tensor  # type: ignore
 
-    # noinspection PyUnusedLocal
     def __init__(self, tensor: _torch.Tensor):
         super().__init__()
         raise RuntimeError('Tensor4d.__init__ only exists for type annotation and should not be called in runtime.')
@@ -67,7 +62,6 @@ class Tensor5d(_torch.Tensor, _typing.Generic[_T1, _T2, _T3, _T4, _T5]):
     def __new__(cls, tensor: _torch.Tensor) -> 'Tensor5d':
         return tensor  # type: ignore
 
-    # noinspection PyUnusedLocal
     def __init__(self, tensor: _torch.Tensor):
         super().__init__()
         raise RuntimeError('Tensor5d.__init__ only exists for type annotation and should not be called in runtime.')
@@ -78,7 +72,6 @@ class Tensor6d(_torch.Tensor, _typing.Generic[_T1, _T2, _T3, _T4, _T5, _T6]):
     def __new__(cls, tensor: _torch.Tensor) -> 'Tensor6d':
         return tensor  # type: ignore
 
-    # noinspection PyUnusedLocal
     def __init__(self, tensor: _torch.Tensor):
         super().__init__()
         raise RuntimeError('Tensor6d.__init__ only exists for type annotation and should not be called in runtime.')
@@ -89,7 +82,6 @@ class Tensor7d(_torch.Tensor, _typing.Generic[_T1, _T2, _T3, _T4, _T5, _T6, _T7]
     def __new__(cls, tensor: _torch.Tensor) -> 'Tensor7d':
         return tensor  # type: ignore
 
-    # noinspection PyUnusedLocal
     def __init__(self, tensor: _torch.Tensor):
         super().__init__()
         raise RuntimeError('Tensor7d.__init__ only exists for type annotation and should not be called in runtime.')
@@ -100,7 +92,6 @@ class Tensor8d(_torch.Tensor, _typing.Generic[_T1, _T2, _T3, _T4, _T5, _T6, _T7,
     def __new__(cls, tensor: _torch.Tensor) -> 'Tensor8d':
         return tensor  # type: ignore
 
-    # noinspection PyUnusedLocal
     def __init__(self, tensor: _torch.Tensor):
         super().__init__()
         raise RuntimeError('Tensor8d.__init__ only exists for type annotation and should not be called in runtime.')
@@ -111,7 +102,6 @@ class Tensor9d(_torch.Tensor, _typing.Generic[_T1, _T2, _T3, _T4, _T5, _T6, _T7,
     def __new__(cls, tensor: _torch.Tensor) -> 'Tensor9d':
         return tensor  # type: ignore
 
-    # noinspection PyUnusedLocal
     def __init__(self, tensor: _torch.Tensor):
         super().__init__()
         raise RuntimeError('Tensor9d.__init__ only exists for type annotation and should not be called in runtime.')
