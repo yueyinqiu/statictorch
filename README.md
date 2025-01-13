@@ -43,3 +43,20 @@ train_on(data_x, Tensor3d(data_y_transposed))
 # Of course in some cases you want to force passing data_y, just simply cheating the type checker with:
 train_on(data_x, Tensor3d(data_y))
 ```
+
+`typing.cast` is also a good idea, especially when you want to call functions like `torch.stack` on a `list[TensorNd]`:
+
+```python
+from statictorch import *
+import typing
+from torch import Tensor
+
+def work_on(tensors: list[Tensor]):
+    ...
+
+my_tensors: list[Tensor0d] = []
+work_on(my_tensors)  # Pylance: Argument of type "list[Tensor0d]" cannot be assigned to parameter "tensors" of type "list[Tensor]" in function "work_on"
+
+# To solve the problem:
+work_on(typing.cast(list[Tensor], my_tensors))
+```
