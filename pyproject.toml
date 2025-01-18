@@ -1,5 +1,5 @@
 [project]
-version = "0.0.2"
+version = "0.0.3"
 dependencies = []
 description = "Provides type annotations for torch tensors."
 authors = [
@@ -7,7 +7,7 @@ authors = [
 ]
 name = "statictorch"
 license = { text = "MIT License" }
-keywords = []
+keywords = ["torch", "pytorch", "typing"]
 readme = "README.md"
 
 [project.urls]

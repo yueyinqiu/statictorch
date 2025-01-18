@@ -3,7 +3,11 @@ import typing as _typing
 import torch as _torch
 
 
-TensorAny: _typing.TypeAlias = _torch.Tensor       
+TensorAny: _typing.TypeAlias = _torch.Tensor
+
+
+def anify(object: _typing.Any) -> _typing.Any:
+    return object
 
 
 class TensorDimensionDescriptor:

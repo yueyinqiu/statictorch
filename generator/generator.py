@@ -7,6 +7,10 @@ import torch as _torch
 TensorAny: _typing.TypeAlias = _torch.Tensor
 
 
+def anify(object: _typing.Any) -> _typing.Any:
+    return object
+
+
 class TensorDimensionDescriptor:
     def __init__(self):
         raise RuntimeError('TensorDimensionDescriptor only exists for type annotation and should not be initialized.')
