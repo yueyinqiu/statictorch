@@ -3,6 +3,9 @@ import typing as _typing
 import torch as _torch
 
 
+TensorAny: _typing.TypeAlias = _torch.Tensor       
+
+
 class TensorDimensionDescriptor:
     def __init__(self):
         raise RuntimeError('TensorDimensionDescriptor only exists for type annotation and should not be initialized.')
