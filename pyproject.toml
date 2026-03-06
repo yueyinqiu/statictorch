@@ -1,5 +1,5 @@
 [project]
-version = "0.0.4"
+version = "0.0.5"
 dependencies = []
 description = "Provides type annotations for torch tensors."
 authors = [
@@ -14,8 +14,10 @@ readme = "README.md"
 Repository = "https://github.com/yueyinqiu/statictorch.git"
 
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.9.28,<0.10.0"]
+build-backend = "uv_build"
 
-[tool.setuptools.packages.find]
-include = ["statictorch"]
+[dependency-groups]
+dev = [
+    "torch>=2.10.0",
+]

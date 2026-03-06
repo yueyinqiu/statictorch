@@ -1,7 +1,16 @@
 print(
 """# Generated with statictorch/generator/generator.py
 import typing as _typing
-import torch as _torch
+try:
+    import torch as _torch
+    
+    e: ImportError
+except ImportError as e:
+    raise ImportError(
+        "Missing dependency: 'torch'. "
+        "Although it is not listed as a hard dependency (to avoid version conflicts), 'likb' requires PyTorch."
+        "Please install a appropriate version of PyTorch."
+    ) from e
 
 
 TensorAny: _typing.TypeAlias = _torch.Tensor
