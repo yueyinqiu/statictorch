@@ -1,15 +1,17 @@
 from typing import Generic, Self, TypeVarTuple
+import typing
 
-from torch import Tensor
+if typing.TYPE_CHECKING:
+    from torch import Tensor
 
 
 _T = TypeVarTuple("_T")
 class TensorNd(Tensor, Generic[*_T]):
     def __new__(cls, tensor: Tensor) -> Self:
-        return tensor  # type: ignore
+        return typing.cast(Self, tensor)
 
     def __init__(self, tensor: Tensor):
-        raise RuntimeError('TensorNd.__init__ only exists for type annotation and should never be called in runtime.')
+        raise RuntimeError("TensorNd.__init__ only exists for type annotation and should never be called in runtime.")
 
 
 class Tensor0d(TensorNd[*tuple[()]]): pass

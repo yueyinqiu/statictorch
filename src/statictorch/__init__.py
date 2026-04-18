@@ -1,14 +1,3 @@
-try:
-    import torch
-    
-    e: ImportError
-except ImportError as e:
-    raise ImportError(
-        "Missing dependency: 'torch'. "
-        "Although it is not listed as a hard dependency (to avoid version conflicts), 'likb' requires PyTorch. "
-        "Please install a appropriate version of PyTorch."
-    ) from e
-
 from statictorch.tensor_nd import (
     TensorNd as TensorNd,
     Tensor0d as Tensor0d,
