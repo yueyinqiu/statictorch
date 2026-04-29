@@ -14,5 +14,8 @@ from statictorch.tensor_nd import (
 
 from statictorch.tensor_dimension_descriptor import TensorDimensionDescriptor as TensorDimensionDescriptor
 
-from statictorch.helpers import anify as anify
-from statictorch.helpers import TensorAny as TensorAny
+from statictorch.helpers import (
+    anify as anify,
+    stack as stack,
+    cat as cat
+)

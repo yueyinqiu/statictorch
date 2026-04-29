@@ -1,8 +1,6 @@
 from typing import Generic, Self, TypeVarTuple
 import typing
-
-if typing.TYPE_CHECKING:
-    from torch import Tensor
+from torch import Tensor
 
 
 _T = TypeVarTuple("_T")
